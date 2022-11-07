@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  text-align: center;
+  /* float: right; */
+  padding: 32px;
+}
+
+.legend {
+  /* text-align: center; */
+  float: left;
+  padding: 2px;
+}
+
+/* .row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 4px;
+} */
+
+/* Create two equal columns that sits next to each other */
+/* .column {
+  -ms-flex: 50%; 
+  flex: 50%;
+  padding: 0 4px;
+} */
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 2px;
+}
+
+.columncaption {
+  -ms-flex: 30%; /* IE 10 */
+  flex: 30%;
+  padding: 0 1px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+<div>
+  <div class="legend">
+    <img src="/home/akshaya/Pictures/legend.png" width=50%>
+  </div>
+  <div class="header" id="myHeader">
+  <h1>Action sequence for building Structure 66 in 7X7 base grid world</h1>  </div>
+</div>
+<!-- <div class="legend">
+  <h3>Legend:</h3>
+  <p>Pink - agent</p>
+  <p>Blue - carried blocks</p>
+  <p>Transparent - structure to be built</p>
+  <p>Purple - placed blocks</p>
+  /home/akshaya/Pictures
+</div> -->
+
+<div class="row">
+  <!-- class="clearfix float-my-children"  -->
+  <div class="column">
+  <figure>
+    <img src="./visualization/random_66.gif" width=90%>  <figcaption>Action sequence from Exact Approach (EA)</figcaption>
+  </figure>
+</div>
+<div class="column">
+  <figure>
+    <img src="./visualization/7x7_decomp_random_66.gif" width=90%>  <figcaption>Action sequence from Exact Approach with decomposition (EA with decomp)</figcaption>
+</figure> 
+</div>
+<div class="column">
+    <table border="1" width="44" style="float:right;margin-right:10%;vertical-align: middle;"> 
+        <tr>
+            <td><h2>Attribute</h2></td>
+            <td><h2>EA</h2></td>
+            <td><h2>EA with decomp</h2></td>
+        </tr>
+        <tr>
+            <td>Computation Time (sec)</td>
+            <td>17.1</td>            <td>37.43</td>        </tr>
+        <tr>
+            <td>Sum of costs</td>
+            <td>49</td>            <td>53</td>        </tr>
+        <tr>
+            <td>Makespan</td>
+            <td>10.0</td>            <td>36</td>        </tr>
+        <!-- <tr>
+            <td>Max no. of robots</td>
+            <td>0</td>
+            <td>0</td>
+        </tr> -->
+    </table>
+ </div>
+</div>
+ <!-- <div class="clearfix float-my-children" >
+  <div width="30%">Action sequeces obtained using exact approach (EA)   Action sequeces obtained using exact approach with decomposition (EA with decomp)</div> -->
+  <!-- <div width="30%">Action sequeces obtained using exact approach (EA)</div> -->
+  <!-- <div class="columncaption">
+    <p>Action sequeces obtained using exact approach (EA)</p>
+  </div>
+  <div class="columncaption">
+    <p>Action sequeces obtained using exact approach with decomposition (EA with decomp)</p>
+  </div> -->
+ <!-- </div> -->

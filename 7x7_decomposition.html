@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header" id="myHeader">
+  <h1>Action sequence for building randomly generated structures in 7X7 grid world</h1>
+  <p>Click on the buttons to change the grid view.</p>
+  <button class="btn" onclick="one()">1</button>
+  <button class="btn" onclick="two()">2</button>
+  <button class="btn" onclick="four()">4</button>
+  <button class="btn active" onclick="eight()">8</button>
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+    Structure 0
+    <img src="./visualization/7x7_decomp_random_0.gif" style="width:100%">
+    Structure 1
+    <img src="./visualization/7x7_decomp_random_1.gif" style="width:100%">
+    Structure 2
+    <img src="./visualization/7x7_decomp_random_2.gif" style="width:100%">
+    Structure 3
+    <img src="./visualization/7x7_decomp_random_3.gif" style="width:100%">
+    Structure 4
+    <img src="./visualization/7x7_decomp_random_4.gif" style="width:100%">
+    Structure 5
+    <img src="./visualization/7x7_decomp_random_5.gif" style="width:100%">
+    Structure 6
+    <img src="./visualization/7x7_decomp_random_6.gif" style="width:100%">
+    Structure 7
+    <img src="./visualization/7x7_decomp_random_7.gif" style="width:100%">
+    Structure 8
+    <img src="./visualization/7x7_decomp_random_8.gif" style="width:100%">
+    Structure 9
+    <img src="./visualization/7x7_decomp_random_9.gif" style="width:100%">
+    Structure 10
+    <img src="./visualization/7x7_decomp_random_10.gif" style="width:100%">
+    Structure 11
+    <img src="./visualization/7x7_decomp_random_11.gif" style="width:100%">
+    Structure 12
+    <img src="./visualization/7x7_decomp_random_12.gif" style="width:100%">
+  </div>
+  <div class="column">
+    Structure 13
+    <img src="./visualization/7x7_decomp_random_13.gif" style="width:100%">
+    Structure 14
+    <img src="./visualization/7x7_decomp_random_14.gif" style="width:100%">
+    Structure 15
+    <img src="./visualization/7x7_decomp_random_15.gif" style="width:100%">
+    Structure 16
+    <img src="./visualization/7x7_decomp_random_16.gif" style="width:100%">
+    Structure 17
+    <img src="./visualization/7x7_decomp_random_17.gif" style="width:100%">
+    Structure 18
+    <img src="./visualization/7x7_decomp_random_18.gif" style="width:100%">
+    Structure 19
+    <img src="./visualization/7x7_decomp_random_19.gif" style="width:100%">
+    Structure 20
+    <img src="./visualization/7x7_decomp_random_20.gif" style="width:100%">
+    Structure 21
+    <img src="./visualization/7x7_decomp_random_21.gif" style="width:100%">
+    Structure 22
+    <img src="./visualization/7x7_decomp_random_22.gif" style="width:100%">
+    Structure 23
+    <img src="./visualization/7x7_decomp_random_23.gif" style="width:100%">
+    Structure 24
+    <img src="./visualization/7x7_decomp_random_24.gif" style="width:100%">
+    Structure 25
+    <img src="./visualization/7x7_decomp_random_25.gif" style="width:100%">
+  </div>
+  <div class="column">
+    Structure 26
+    <img src="./visualization/7x7_decomp_random_26.gif" style="width:100%">
+    Structure 27
+    <img src="./visualization/7x7_decomp_random_27.gif" style="width:100%">
+    Structure 28
+    <img src="./visualization/7x7_decomp_random_28.gif" style="width:100%">
+    Structure 29
+    <img src="./visualization/7x7_decomp_random_29.gif" style="width:100%">
+    Structure 30
+    <img src="./visualization/7x7_decomp_random_30.gif" style="width:100%">
+    Structure 31
+    <img src="./visualization/7x7_decomp_random_31.gif" style="width:100%">
+    Structure 32
+    <img src="./visualization/7x7_decomp_random_32.gif" style="width:100%">
+    Structure 33
+    <img src="./visualization/7x7_decomp_random_33.gif" style="width:100%">
+    Structure 34
+    <img src="./visualization/7x7_decomp_random_34.gif" style="width:100%">
+    Structure 35
+    <img src="./visualization/7x7_decomp_random_35.gif" style="width:100%">
+    Structure 36
+    <img src="./visualization/7x7_decomp_random_36.gif" style="width:100%">
+    Structure 37
+    <img src="./visualization/7x7_decomp_random_37.gif" style="width:100%">
+    Structure 38
+    <img src="./visualization/7x7_decomp_random_38.gif" style="width:100%">
+  </div>
+  <div class="column">
+    Structure 39
+    <img src="./visualization/7x7_decomp_random_39.gif" style="width:100%">
+    Structure 40
+    <img src="./visualization/7x7_decomp_random_40.gif" style="width:100%">
+    Structure 41
+    <img src="./visualization/7x7_decomp_random_41.gif" style="width:100%">
+    Structure 42
+    <img src="./visualization/7x7_decomp_random_42.gif" style="width:100%">
+    Structure 43
+    <img src="./visualization/7x7_decomp_random_43.gif" style="width:100%">
+    Structure 44
+    <img src="./visualization/7x7_decomp_random_44.gif" style="width:100%">
+    Structure 45
+    <img src="./visualization/7x7_decomp_random_45.gif" style="width:100%">
+    Structure 46
+    <img src="./visualization/7x7_decomp_random_46.gif" style="width:100%">
+    Structure 47
+    <img src="./visualization/7x7_decomp_random_47.gif" style="width:100%">
+    Structure 48
+    <img src="./visualization/7x7_decomp_random_48.gif" style="width:100%">
+    Structure 49
+    <img src="./visualization/7x7_decomp_random_49.gif" style="width:100%">
+    Structure 50
+    <img src="./visualization/7x7_decomp_random_50.gif" style="width:100%">
+    Structure 51
+    <img src="./visualization/7x7_decomp_random_51.gif" style="width:100%">
+  </div>  
+  <div class="column">
+    Structure 52
+    <img src="./visualization/7x7_decomp_random_52.gif" style="width:100%">
+    Structure 53
+    <img src="./visualization/7x7_decomp_random_53.gif" style="width:100%">
+    Structure 54
+    <img src="./visualization/7x7_decomp_random_54.gif" style="width:100%">
+    Structure 55
+    <img src="./visualization/7x7_decomp_random_55.gif" style="width:100%">
+    Structure 56
+    <img src="./visualization/7x7_decomp_random_56.gif" style="width:100%">
+    Structure 57
+    <img src="./visualization/7x7_decomp_random_57.gif" style="width:100%">
+    Structure 58
+    <img src="./visualization/7x7_decomp_random_58.gif" style="width:100%">
+    Structure 59
+    <img src="./visualization/7x7_decomp_random_59.gif" style="width:100%">
+    Structure 60
+    <img src="./visualization/7x7_decomp_random_60.gif" style="width:100%">
+    Structure 61
+    <img src="./visualization/7x7_decomp_random_61.gif" style="width:100%">
+    Structure 62
+    <img src="./visualization/7x7_decomp_random_62.gif" style="width:100%">
+    Structure 63
+    <img src="./visualization/7x7_decomp_random_63.gif" style="width:100%">
+  </div>
+  <div class="column">
+    Structure 64
+    <img src="./visualization/7x7_decomp_random_64.gif" style="width:100%">
+    Structure 65
+    <img src="./visualization/7x7_decomp_random_65.gif" style="width:100%">
+    Structure 66
+    <img src="./visualization/7x7_decomp_random_66.gif" style="width:100%">
+    Structure 67
+    <img src="./visualization/7x7_decomp_random_67.gif" style="width:100%">
+    Structure 68
+    <img src="./visualization/7x7_decomp_random_68.gif" style="width:100%">
+    Structure 69
+    <img src="./visualization/7x7_decomp_random_69.gif" style="width:100%">
+    Structure 70
+    <img src="./visualization/7x7_decomp_random_70.gif" style="width:100%">
+    Structure 71
+    <img src="./visualization/7x7_decomp_random_71.gif" style="width:100%">
+    Structure 72
+    <img src="./visualization/7x7_decomp_random_72.gif" style="width:100%">
+    Structure 73
+    <img src="./visualization/7x7_decomp_random_73.gif" style="width:100%">
+    Structure 74
+    <img src="./visualization/7x7_decomp_random_74.gif" style="width:100%">
+    Structure 75
+    <img src="./visualization/7x7_decomp_random_75.gif" style="width:100%">
+  </div>
+  <div class="column">
+    Structure 76
+    <img src="./visualization/7x7_decomp_random_76.gif" style="width:100%">
+    Structure 77
+    <img src="./visualization/7x7_decomp_random_77.gif" style="width:100%">
+    Structure 78
+    <img src="./visualization/7x7_decomp_random_78.gif" style="width:100%">
+    Structure 79
+    <img src="./visualization/7x7_decomp_random_79.gif" style="width:100%">
+    Structure 80
+    <img src="./visualization/7x7_decomp_random_80.gif" style="width:100%">
+    Structure 81
+    <img src="./visualization/7x7_decomp_random_81.gif" style="width:100%">
+    Structure 82
+    <img src="./visualization/7x7_decomp_random_82.gif" style="width:100%">
+    Structure 83
+    <img src="./visualization/7x7_decomp_random_83.gif" style="width:100%">
+    Structure 84
+    <img src="./visualization/7x7_decomp_random_84.gif" style="width:100%">
+    Structure 85
+    <img src="./visualization/7x7_decomp_random_85.gif" style="width:100%">
+    Structure 86
+    <img src="./visualization/7x7_decomp_random_86.gif" style="width:100%">
+    Structure 87
+    <img src="./visualization/7x7_decomp_random_87.gif" style="width:100%">
+  </div>
+  <div class="column">
+    Structure 88
+    <img src="./visualization/7x7_decomp_random_88.gif" style="width:100%">
+    Structure 89
+    <img src="./visualization/7x7_decomp_random_89.gif" style="width:100%">
+    Structure 90
+    <img src="./visualization/7x7_decomp_random_90.gif" style="width:100%">
+    Structure 91
+    <img src="./visualization/7x7_decomp_random_91.gif" style="width:100%">
+    Structure 92
+    <img src="./visualization/7x7_decomp_random_92.gif" style="width:100%">
+    Structure 93
+    <img src="./visualization/7x7_decomp_random_93.gif" style="width:100%">
+    Structure 94
+    <img src="./visualization/7x7_decomp_random_94.gif" style="width:100%">
+    Structure 95
+    <img src="./visualization/7x7_decomp_random_95.gif" style="width:100%">
+    Structure 96
+    <img src="./visualization/7x7_decomp_random_96.gif" style="width:100%">
+    Structure 97
+    <img src="./visualization/7x7_decomp_random_97.gif" style="width:100%">
+    Structure 98
+    <img src="./visualization/7x7_decomp_random_98.gif" style="width:100%">
+    Structure 99
+    <img src="./visualization/7x7_decomp_random_99.gif" style="width:100%">
+  </div>
+</div>
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// Full-width images
+function one() {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "100%";  // IE10
+    elements[i].style.flex = "100%";
+  }
+}
+
+// Two images side by side
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "50%";  // IE10
+    elements[i].style.flex = "50%";
+  }
+}
+
+// Four images side by side
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+}
+
+// Seven images side by side
+function eight() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "12.5%";  // IE1
+    elements[i].style.flex = "12.5%";
+  }
+}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
