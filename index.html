@@ -1,372 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
+  margin: 20px;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.header {
   text-align: center;
-  padding: 32px;
 }
 
-.legend {
-  /* text-align: center; */
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
   float: left;
-  padding: 2px;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
 }
 
-.row {
-  display: -ms-flexbox; /* IE 10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE 10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-
-/* Create two equal columns that sits next to each other */
-.column {
-  -ms-flex: 12.5%; /* IE 10 */
-  flex: 12.5%;
-  padding: 0 4px;
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-}
-
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.btn:hover {
+.topnav a:hover {
   background-color: #ddd;
+  color: black;
 }
 
-.btn.active {
-  background-color: #666;
+.topnav a.active {
+  background-color: #04AA6D;
   color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+/* .img {
+  align: right
+} */
+
+p {
+  text-align: justify;
+  font-size: 20px;
+}
+
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
+    display: block;
+  }
+  
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- Header -->
-<div>
-  <div class="legend">
-    <img src="./visualization/legend.png" width=50%>
-  </div>
-  <div class="header" id="myHeader">
-    <h1>Building 100 different structures in 7X7 grid world</h1>
-    <!-- <p>[1] Lam, E., Stuckey, P.J., Koenig, S., Kumar, T.K.S. (2020). Exact Approaches to the Multi-agent Collective Construction Problem</p> -->
-    <!-- <p>Click on the buttons to change the grid view.</p> -->
-    <button class="btn" onclick="one()">1</button>
-    <button class="btn" onclick="two()">2</button>
-    <button class="btn" onclick="four()">4</button>
-    <button class="btn active" onclick="eight()">8</button>
-  </div>
-</div>
-<!-- <div class="header" id="myHeader">
-  <h1>Building 100 different structures in 7X7 grid world</h1>
-  <!-- <p>[1] Lam, E., Stuckey, P.J., Koenig, S., Kumar, T.K.S. (2020). Exact Approaches to the Multi-agent Collective Construction Problem</p> -->
-  <!-- <p>Click on the buttons to change the grid view.</p> -->
-  <!-- <button class="btn" onclick="one()">1</button>
-  <button class="btn active" onclick="two()">2</button>
-  <button class="btn" onclick="four()">4</button>
-  <button class="btn" onclick="eight()">8</button>
-</div>
-<div class="legend">
-  <h3>Legend:</h3>
-  <p>Pink - agent</p>
-  <p>Dark blue - block being carried</p>
-  <p>Transparent blue - cells representing the final structure</p>
-  <p>Purple - placed blocks</p>
-</div> -->
+<!-- Top navigation -->
+<div class="topnav">
 
-<!-- Photo Grid -->
-<div class="row"> 
-  <div class="column">
-    Structure 0
-    <a href="./page_0.html"><img src="./visualization/7x7_decomp_random_0.gif" style="width:100%"></a>
-    Structure 1
-    <a href="./page_1.html"><img src="./visualization/7x7_decomp_random_1.gif" style="width:100%"></a>
-    Structure 2
-    <a href="./page_2.html"><img src="./visualization/7x7_decomp_random_2.gif" style="width:100%"></a>
-    Structure 3
-    <a href="./page_3.html"><img src="./visualization/7x7_decomp_random_3.gif" style="width:100%"></a>
-    Structure 4
-    <a href="./page_4.html"><img src="./visualization/7x7_decomp_random_4.gif" style="width:100%"></a>
-    Structure 5
-    <a href="./page_5.html"><img src="./visualization/7x7_decomp_random_5.gif" style="width:100%"></a>
-    Structure 6
-    <a href="./page_6.html"><img src="./visualization/7x7_decomp_random_6.gif" style="width:100%"></a>
-    Structure 7
-    <a href="./page_7.html"><img src="./visualization/7x7_decomp_random_7.gif" style="width:100%"></a>
-    Structure 8
-    <a href="./page_8.html"><img src="./visualization/7x7_decomp_random_8.gif" style="width:100%"></a>
-    Structure 9
-    <a href="./page_9.html"><img src="./visualization/7x7_decomp_random_9.gif" style="width:100%"></a>
-    Structure 10
-    <a href="./page_10.html"><img src="./visualization/7x7_decomp_random_10.gif" style="width:100%"></a>
-    Structure 11
-    <a href="./page_11.html"><img src="./visualization/7x7_decomp_random_11.gif" style="width:100%"></a>
-    Structure 12
-    <a href="./page_12.html"><img src="./visualization/7x7_decomp_random_12.gif" style="width:100%"></a>
+  <!-- Centered link -->
+  <!-- <div class="topnav-centered">
+    <a href="#home" class="active">7x7 world experiments</a>
   </div>
-  <div class="column">
-    Structure 13
-    <a href="./page_13.html"><img src="./visualization/7x7_decomp_random_13.gif" style="width:100%"></a>
-    Structure 14
-    <a href="./page_14.html"><img src="./visualization/7x7_decomp_random_14.gif" style="width:100%"></a>
-    Structure 15
-    <a href="./page_15.html"><img src="./visualization/7x7_decomp_random_15.gif" style="width:100%"></a>
-    Structure 16
-    <a href="./page_16.html"><img src="./visualization/7x7_decomp_random_16.gif" style="width:100%"></a>
-    Structure 17
-    <a href="./page_17.html"><img src="./visualization/7x7_decomp_random_17.gif" style="width:100%"></a>
-    Structure 18
-    <a href="./page_18.html"><img src="./visualization/7x7_decomp_random_18.gif" style="width:100%"></a>
-    Structure 19
-    <a href="./page_19.html"><img src="./visualization/7x7_decomp_random_19.gif" style="width:100%"></a>
-    Structure 20
-    <a href="./page_20.html"><img src="./visualization/7x7_decomp_random_20.gif" style="width:100%"></a>
-    Structure 21
-    <a href="./page_21.html"><img src="./visualization/7x7_decomp_random_21.gif" style="width:100%"></a>
-    Structure 22
-    <a href="./page_22.html"><img src="./visualization/7x7_decomp_random_22.gif" style="width:100%"></a>
-    Structure 23
-    <a href="./page_23.html"><img src="./visualization/7x7_decomp_random_23.gif" style="width:100%"></a>
-    Structure 24
-    <a href="./page_24.html"><img src="./visualization/7x7_decomp_random_24.gif" style="width:100%"></a>
-    Structure 25
-    <a href="./page_25.html"><img src="./visualization/7x7_decomp_random_25.gif" style="width:100%"></a>
+
+  <div class="topnav-centered">
+    <a href="#home" class="active">10x10 world experiments</a>
   </div>
-  <div class="column">
-    Structure 26
-    <a href="./page_26.html"><img src="./visualization/7x7_decomp_random_26.gif" style="width:100%"></a>
-    Structure 27
-    <a href="./page_27.html"><img src="./visualization/7x7_decomp_random_27.gif" style="width:100%"></a>
-    Structure 28
-    <a href="./page_28.html"><img src="./visualization/7x7_decomp_random_28.gif" style="width:100%"></a>
-    Structure 29
-    <a href="./page_29.html"><img src="./visualization/7x7_decomp_random_29.gif" style="width:100%"></a>
-    Structure 30
-    <a href="./page_30.html"><img src="./visualization/7x7_decomp_random_30.gif" style="width:100%"></a>
-    Structure 31
-    <a href="./page_31.html"><img src="./visualization/7x7_decomp_random_31.gif" style="width:100%"></a>
-    Structure 32
-    <a href="./page_32.html"><img src="./visualization/7x7_decomp_random_32.gif" style="width:100%"></a>
-    Structure 33
-    <a href="./page_33.html"><img src="./visualization/7x7_decomp_random_33.gif" style="width:100%"></a>
-    Structure 34
-    <a href="./page_34.html"><img src="./visualization/7x7_decomp_random_34.gif" style="width:100%"></a>
-    Structure 35
-    <a href="./page_35.html"><img src="./visualization/7x7_decomp_random_35.gif" style="width:100%"></a>
-    Structure 36
-    <a href="./page_36.html"><img src="./visualization/7x7_decomp_random_36.gif" style="width:100%"></a>
-    Structure 37
-    <a href="./page_37.html"><img src="./visualization/7x7_decomp_random_37.gif" style="width:100%"></a>
-    Structure 38
-    <a href="./page_38.html"><img src="./visualization/7x7_decomp_random_38.gif" style="width:100%"></a>
+   -->
+  <!-- Left-aligned links (default) -->
+  <a href="./main_7x7.html">7x7 world experiments</a>
+  <!-- <a href="#contact">Contact</a> -->
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="./main_10x10.html">10x10 world experiments</a>
+    <!-- <a href="#about">About</a> -->
   </div>
-  <div class="column">
-    Structure 39
-    <a href="./page_39.html"><img src="./visualization/7x7_decomp_random_39.gif" style="width:100%"></a>
-    Structure 40
-    <a href="./page_40.html"><img src="./visualization/7x7_decomp_random_40.gif" style="width:100%"></a>
-    Structure 41
-    <a href="./page_41.html"><img src="./visualization/7x7_decomp_random_41.gif" style="width:100%"></a>
-    Structure 42
-    <a href="./page_42.html"><img src="./visualization/7x7_decomp_random_42.gif" style="width:100%"></a>
-    Structure 43
-    <a href="./page_43.html"><img src="./visualization/7x7_decomp_random_43.gif" style="width:100%"></a>
-    Structure 44
-    <a href="./page_44.html"><img src="./visualization/7x7_decomp_random_44.gif" style="width:100%"></a>
-    Structure 45
-    <a href="./page_45.html"><img src="./visualization/7x7_decomp_random_45.gif" style="width:100%"></a>
-    Structure 46
-    <a href="./page_46.html"><img src="./visualization/7x7_decomp_random_46.gif" style="width:100%"></a>
-    Structure 47
-    <a href="./page_47.html"><img src="./visualization/7x7_decomp_random_47.gif" style="width:100%"></a>
-    Structure 48
-    <a href="./page_48.html"><img src="./visualization/7x7_decomp_random_48.gif" style="width:100%"></a>
-    Structure 49
-    <a href="./page_49.html"><img src="./visualization/7x7_decomp_random_49.gif" style="width:100%"></a>
-    Structure 50
-    <a href="./page_50.html"><img src="./visualization/7x7_decomp_random_50.gif" style="width:100%"></a>
-    Structure 51
-    <a href="./page_51.html"><img src="./visualization/7x7_decomp_random_51.gif" style="width:100%"></a>
-  </div>  
-  <div class="column">
-    Structure 52
-    <a href="./page_52.html"><img src="./visualization/7x7_decomp_random_52.gif" style="width:100%"></a>
-    Structure 53
-    <a href="./page_53.html"><img src="./visualization/7x7_decomp_random_53.gif" style="width:100%"></a>
-    Structure 54
-    <a href="./page_54.html"><img src="./visualization/7x7_decomp_random_54.gif" style="width:100%"></a>
-    Structure 55
-    <a href="./page_55.html"><img src="./visualization/7x7_decomp_random_55.gif" style="width:100%"></a>
-    Structure 56
-    <a href="./page_56.html"><img src="./visualization/7x7_decomp_random_56.gif" style="width:100%"></a>
-    Structure 57
-    <a href="./page_57.html"><img src="./visualization/7x7_decomp_random_57.gif" style="width:100%"></a>
-    Structure 58
-    <a href="./page_58.html"><img src="./visualization/7x7_decomp_random_58.gif" style="width:100%"></a>
-    Structure 59
-    <a href="./page_59.html"><img src="./visualization/7x7_decomp_random_59.gif" style="width:100%"></a>
-    Structure 60
-    <a href="./page_60.html"><img src="./visualization/7x7_decomp_random_60.gif" style="width:100%"></a>
-    Structure 61
-    <a href="./page_61.html"><img src="./visualization/7x7_decomp_random_61.gif" style="width:100%"></a>
-    Structure 62
-    <a href="./page_62.html"><img src="./visualization/7x7_decomp_random_62.gif" style="width:100%"></a>
-    Structure 63
-    <a href="./page_63.html"><img src="./visualization/7x7_decomp_random_63.gif" style="width:100%"></a>
-  </div>
-  <div class="column">
-    Structure 64
-    <a href="./page_64.html"><img src="./visualization/7x7_decomp_random_64.gif" style="width:100%"></a>
-    Structure 65
-    <a href="./page_65.html"><img src="./visualization/7x7_decomp_random_65.gif" style="width:100%"></a>
-    Structure 66
-    <a href="./page_66.html"><img src="./visualization/7x7_decomp_random_66.gif" style="width:100%"></a>
-    Structure 67
-    <a href="./page_67.html"><img src="./visualization/7x7_decomp_random_67.gif" style="width:100%"></a>
-    Structure 68
-    <a href="./page_68.html"><img src="./visualization/7x7_decomp_random_68.gif" style="width:100%"></a>
-    Structure 69
-    <a href="./page_69.html"><img src="./visualization/7x7_decomp_random_69.gif" style="width:100%"></a>
-    Structure 70
-    <a href="./page_70.html"><img src="./visualization/7x7_decomp_random_70.gif" style="width:100%"></a>
-    Structure 71
-    <a href="./page_71.html"><img src="./visualization/7x7_decomp_random_71.gif" style="width:100%"></a>
-    Structure 72
-    <a href="./page_72.html"><img src="./visualization/7x7_decomp_random_72.gif" style="width:100%"></a>
-    Structure 73
-    <a href="./page_73.html"><img src="./visualization/7x7_decomp_random_73.gif" style="width:100%"></a>
-    Structure 74
-    <a href="./page_74.html"><img src="./visualization/7x7_decomp_random_74.gif" style="width:100%"></a>
-    Structure 75
-    <a href="./page_75.html"><img src="./visualization/7x7_decomp_random_75.gif" style="width:100%"></a>
-  </div>
-  <div class="column">
-    Structure 76
-    <a href="./page_76.html"><img src="./visualization/7x7_decomp_random_76.gif" style="width:100%"></a>
-    Structure 77
-    <a href="./page_77.html"><img src="./visualization/7x7_decomp_random_77.gif" style="width:100%"></a>
-    Structure 78
-    <a href="./page_78.html"><img src="./visualization/7x7_decomp_random_78.gif" style="width:100%"></a>
-    Structure 79
-    <a href="./page_79.html"><img src="./visualization/7x7_decomp_random_79.gif" style="width:100%"></a>
-    Structure 80
-    <a href="./page_80.html"><img src="./visualization/7x7_decomp_random_80.gif" style="width:100%"></a>
-    Structure 81
-    <a href="./page_81.html"><img src="./visualization/7x7_decomp_random_81.gif" style="width:100%"></a>
-    Structure 82
-    <a href="./page_82.html"><img src="./visualization/7x7_decomp_random_82.gif" style="width:100%"></a>
-    Structure 83
-    <a href="./page_83.html"><img src="./visualization/7x7_decomp_random_83.gif" style="width:100%"></a>
-    Structure 84
-    <a href="./page_84.html"><img src="./visualization/7x7_decomp_random_84.gif" style="width:100%"></a>
-    Structure 85
-    <a href="./page_85.html"><img src="./visualization/7x7_decomp_random_85.gif" style="width:100%"></a>
-    Structure 86
-    <a href="./page_86.html"><img src="./visualization/7x7_decomp_random_86.gif" style="width:100%"></a>
-    Structure 87
-    <a href="./page_87.html"><img src="./visualization/7x7_decomp_random_87.gif" style="width:100%"></a>
-  </div>
-  <div class="column">
-    Structure 88
-    <a href="./page_88.html"><img src="./visualization/7x7_decomp_random_88.gif" style="width:100%"></a>
-    Structure 89
-    <a href="./page_89.html"><img src="./visualization/7x7_decomp_random_89.gif" style="width:100%"></a>
-    Structure 90
-    <a href="./page_90.html"><img src="./visualization/7x7_decomp_random_90.gif" style="width:100%"></a>
-    Structure 91
-    <a href="./page_91.html"><img src="./visualization/7x7_decomp_random_91.gif" style="width:100%"></a>
-    Structure 92
-    <a href="./page_92.html"><img src="./visualization/7x7_decomp_random_92.gif" style="width:100%"></a>
-    Structure 93
-    <a href="./page_93.html"><img src="./visualization/7x7_decomp_random_93.gif" style="width:100%"></a>
-    Structure 94
-    <a href="./page_94.html"><img src="./visualization/7x7_decomp_random_94.gif" style="width:100%"></a>
-    Structure 95
-    <a href="./page_95.html"><img src="./visualization/7x7_decomp_random_95.gif" style="width:100%"></a>
-    Structure 96
-    <a href="./page_96.html"><img src="./visualization/7x7_decomp_random_96.gif" style="width:100%"></a>
-    Structure 97
-    <a href="./page_97.html"><img src="./visualization/7x7_decomp_random_97.gif" style="width:100%"></a>
-    Structure 98
-    <a href="./page_98.html"><img src="./visualization/7x7_decomp_random_98.gif" style="width:100%"></a>
-    Structure 99
-    <a href="./page_99.html"><img src="./visualization/7x7_decomp_random_99.gif" style="width:100%"></a>
-  </div>
+  
 </div>
 
-<script>
-// Get the elements with class="column"
-var elements = document.getElementsByClassName("column");
-
-// Declare a loop variable
-var i;
-
-// Full-width images
-function one() {
-    for (i = 0; i < elements.length; i++) {
-    elements[i].style.msFlex = "100%";  // IE10
-    elements[i].style.flex = "100%";
-  }
-}
-
-// Two images side by side
-function two() {
-  for (i = 0; i < elements.length; i++) {
-    elements[i].style.msFlex = "50%";  // IE10
-    elements[i].style.flex = "50%";
-  }
-}
-
-// Four images side by side
-function four() {
-  for (i = 0; i < elements.length; i++) {
-    elements[i].style.msFlex = "25%";  // IE10
-    elements[i].style.flex = "25%";
-  }
-}
-
-// Seven images side by side
-function eight() {
-  for (i = 0; i < elements.length; i++) {
-    elements[i].style.msFlex = "12.5%";  // IE1
-    elements[i].style.flex = "12.5%";
-  }
-}
-
-// Add active class to the current button (highlight it)
-var header = document.getElementById("myHeader");
-var btns = header.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-</script>
+<div style="padding-left:16px">
+  <h2>Multi-agent Collective Construction using 3D decomposition</h2>
+  <p>Consider a Multi-Agent Collective Construction (MACC) problem that aims to build a three-dimensional structure comprised of cubic blocks. We use cube-shaped robots that can carry one cubic block at a time, and move forward, reverse, left, and right to an adjacent cell of the same height or climb up and down one cube height. To construct structures taller than one cube, the robots must build supporting stairs made of blocks and remove the stairs once the structure is built. Conventional techniques solve for the entire structure at once and quickly become intractable for larger workspaces and complex structures, especially in a multi-agent setting. To this end, we present a decomposition algorithm that computes substructures based on intrinsic structural dependencies. We use Mixed Integer Linear Programming (MILP) to solve for each substructure and then aggregate the solutions to construct the entire structure.</p>
+  <img src="MACC_motivating_figure.png" alt="Workflow of the algorithm" aligh="right"> 
+  <p>Extensive testing on 200 randomly generated structures shows an order of magnitude improvement in the solution computation time compared to an MILP approach without decomposition.</p>
+  <p>Furthermore, we leverage the independence between substructures to detect which substructures can be built in parallel. With this parallelization technique, we illustrate a further improvement in the number of time steps required to complete building the structure. This work is a step towards applying multi-agent collective construction for real-world structures by significantly reducing solution computation time with a bounded increase in the time steps required to build the structure.</p>
+  <p>Some of our experimental results in a 7x7x3 and 10x10x4 voxel worlds are linked here.</p>
+</div>
 
 </body>
 </html>
