@@ -54,6 +54,9 @@ p {
   text-align: justify;
   font-size: 20px;
 }
+li {
+    text-align: left;
+}
 
 /* Responsive navigation menu (for mobile devices) */
 @media screen and (max-width: 600px) {
@@ -103,7 +106,11 @@ p {
   <img src="MACC_motivating_figure.png" alt="Workflow of the algorithm" aligh="right"> 
   <p>Extensive testing on 200 randomly generated structures shows an order of magnitude improvement in the solution computation time compared to an MILP approach without decomposition.</p>
   <p>Furthermore, we leverage the independence between substructures to detect which substructures can be built in parallel. With this parallelization technique, we illustrate a further improvement in the number of time steps required to complete building the structure. This work is a step towards applying multi-agent collective construction for real-world structures by significantly reducing solution computation time with a bounded increase in the time steps required to build the structure.</p>
-  <p>Some of our experimental results in a 7x7x3 and 10x10x4 voxel worlds are linked here.</p>
+  <p>Some of our experimental results in a 7x7x3 and 10x10x4 voxel worlds are linked here:</p>
+  <ol>
+    <li><a href="./main_7x7.html">7x7 world experiments</a></li>
+    <li><a href="./main_10x10.html">10x10 world experiments</a></li>
+  </ol>
 </div>
 
 </body>
